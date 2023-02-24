@@ -1,0 +1,20 @@
+.summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 18rem;
+}
+
+.summary > ul  {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+}
+
+.summary > ul > li:first-child {
+    border-top: 1px solid;
+}
+
+.summary > ul > li {
+    padding: 3rem 0;
+    border-bottom: 1px solid;
+}

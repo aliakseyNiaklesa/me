@@ -1,7 +1,16 @@
 import React from 'react';
+import { Header, Title, Summary } from './components';
+
+import './styles.css';
 
 export const App = () => {
     return (
-        <div>Hello</div>
+        <main>
+            <section>
+                <Header />
+                <Title />
+                <Summary />
+            </section>
+        </main>
     )
 };
