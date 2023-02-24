@@ -1,5 +1,10 @@
 import React from 'react';
-import { Header, Title, Summary } from './components';
+import {
+    Header,
+    Title,
+    Summary,
+    Companies,
+} from './components';
 
 import './styles.css';
 
@@ -10,6 +15,7 @@ export const App = () => {
                 <Header />
                 <Title />
                 <Summary />
+                <Companies />
             </section>
         </main>
     )
