@@ -4,6 +4,7 @@ import {
     Title,
     Summary,
     Companies,
+    AboutMe,
 } from './components';
 
 import './styles.css';
@@ -13,9 +14,10 @@ export const App = () => {
         <main>
             <section>
                 <Header />
-                <Title />
+                {/* <Title />
                 <Summary />
-                <Companies />
+                <Companies /> */}
+                <AboutMe />
             </section>
         </main>
     )

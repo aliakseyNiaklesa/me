@@ -1,0 +1,26 @@
+.about-me {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-me > span:first-child {
+    font-size: 38px;
+}
+
+.about-me > span:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me > span:last-child > img {
+    width: 100%;
+}
+
+.about-me > span:last-child > p {
+    padding: 3.3rem 0;
+    margin-top: 10rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+

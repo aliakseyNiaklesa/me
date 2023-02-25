@@ -7,6 +7,11 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  resolve: {
+    alias: {
+      assets: path.resolve(__dirname, 'src/assets'),
+    }
+  },
   mode: 'development',
   module: {
     rules: [
@@ -38,6 +43,14 @@ module.exports = {
           test: /\.css$/,
           use: ["style-loader", "css-loader"],
           exclude: /\.module\.css$/,
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
         },
       ],
   },
