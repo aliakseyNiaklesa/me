@@ -13,8 +13,8 @@ export const App = () => {
     return (
         <main>
             <section>
-                <Header />
-                {/* <Title />
+                {/* <Header />
+                <Title />
                 <Summary />
                 <Companies /> */}
                 <AboutMe />
