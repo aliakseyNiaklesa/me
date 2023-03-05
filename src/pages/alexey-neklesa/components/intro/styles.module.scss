@@ -1,0 +1,76 @@
+.intro {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        'name title city resume'
+        'bigTitle bigTitle bigTitle bigTitle'
+        '. . . .';
+
+    .name, .title, .city, .resume {
+        padding-top: 7.5rem;
+    }
+    
+    .name {
+        grid-area: name;
+    }
+
+    .title {
+        grid-area: title;
+        width: 20rem;
+    }
+
+    .city {
+        grid-area: city;
+        width: 14rem;
+    }
+
+    .resume {
+        grid-area: resume;
+        
+        a {
+            display: block;
+            text-align: end;
+            color: black;
+        }
+    }
+
+    .bigTitle {
+        container-type: inline-size;
+        grid-area: bigTitle;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        div {
+            font-size: 9cqw;
+            font-weight: 900;
+            letter-spacing: 0;
+            text-align: left;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .intro {
+        grid-template-areas:
+        'name . . resume'
+        'bigTitle bigTitle bigTitle bigTitle'
+        'title . . city';
+
+        .city {
+            text-align: end;
+            justify-self: end;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .intro {
+        .bigTitle {
+            div {
+                font-size: 15cqw;
+            }
+        }
+    }
+}
