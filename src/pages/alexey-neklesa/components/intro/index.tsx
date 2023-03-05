@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export const Intro = () => {
+const Intro = () => {
 
     return (
         <section className={styles.intro}>
@@ -21,3 +21,5 @@ export const Intro = () => {
         </section>
     );
 }
+
+export default Intro;
