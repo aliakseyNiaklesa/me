@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const Intro = () => {
+    const yearExp = new Date().getFullYear() - 2017;
 
     return (
         <section className={styles.intro}>
@@ -15,7 +16,7 @@ const Intro = () => {
             </span>
             <span className={styles.bigTitle}>
                 <div>Front-end</div>
-                <div>developer with 6+</div>
+                <div>developer with {yearExp}+</div>
                 <div>years of experience</div>
             </span>
         </section>
