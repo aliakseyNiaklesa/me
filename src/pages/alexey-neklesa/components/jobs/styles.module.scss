@@ -1,0 +1,40 @@
+.jobs {
+    position: relative;
+    height: 60vh;
+    container-type: inline-size;
+
+    .title, span {
+        position: absolute;
+        font-weight: 900;
+        font-size: clamp(4rem, 4cqw, 5.8rem);
+        line-height: 104.02%;
+        text-transform: uppercase;
+    }
+
+    .title {
+        display: inline-block;
+        max-width: 53rem;
+        color: #CFCECD;
+        top: 40%;
+    }
+
+    .andersen {
+        top: 10%;
+        left: 20%;
+    }
+
+    .consensus {
+        top: 30%;
+        left: 30%;
+    }
+
+    .cian {
+        top: 50%;
+        left: 20%;
+    }
+
+    .sberbank {
+        top: 80%;
+        left: 10%;
+    }
+}

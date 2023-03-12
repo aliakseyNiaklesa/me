@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
+import Jobs from './components/jobs';
 import Intro from './components/intro';
 import Experience from './components/experience';
 
@@ -19,6 +20,7 @@ const AlexeyNekelesaCV = () => {
             </Head>
             <Intro />
             <Experience />
+            <Jobs />
         </main>
     )
 }
