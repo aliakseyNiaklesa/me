@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 import Jobs from './components/jobs';
 import Intro from './components/intro';
+import About from './components/about';
 import Experience from './components/experience';
 
 import './styles.scss';
@@ -21,6 +22,7 @@ const AlexeyNekelesaCV = () => {
             <Intro />
             <Experience />
             <Jobs />
+            <About />
         </main>
     )
 }
