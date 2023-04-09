@@ -1,0 +1,46 @@
+.companies { 
+    position: relative;
+    height: 70rem;
+}
+
+.companies > span { 
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 6rem;
+    line-height: 104.02%;
+
+    color: black;
+}
+
+.companies > span:first-child {
+    top: 40%;
+    width: 53rem;
+
+    color: #CFCECD;
+}
+
+.companies > span:nth-child(2) {
+    top: 10%;
+    left: 10%;
+}
+
+.companies > span:nth-child(3) {
+    top: 35%;
+    right: 10%;
+}
+
+.companies > span:nth-child(4) {
+    top: 55%;
+    right: 20%;
+}
+
+.companies > span:nth-child(5) {
+    top: 80%;
+    left: 20%;
+}
+
+.companies > span:nth-child(6) {
+    top: 15%;
+    left: 54%;
+}
