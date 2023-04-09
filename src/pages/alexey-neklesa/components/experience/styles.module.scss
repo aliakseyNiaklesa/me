@@ -1,0 +1,30 @@
+.experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    span {
+        font-weight: 900;
+        font-size: 3.8rem;
+    }
+
+    ul > li {
+        border-top: solid 1px black;
+        padding: 3rem 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul > li:last-child {
+        border-bottom: solid 1px black;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .experience {
+        grid-template-columns: none;
+    }
+}

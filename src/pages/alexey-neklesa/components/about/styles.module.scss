@@ -1,0 +1,23 @@
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+
+    .title {
+        font-weight: 900;
+        font-size: 3.8rem;
+    }
+
+    .card {
+        img {
+            width: 100%;
+            margin-bottom: 8rem;
+        }
+
+        div {
+            padding: 3rem 0;
+            border-top: 0.1rem solid;
+            border-bottom: 0.1rem solid;
+        }
+    }
+}
