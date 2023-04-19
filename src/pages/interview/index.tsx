@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Sidebar from './components/sidebar';
+import Sidebar from '@/widgets/sidebar';
 
-import { ITag, IRequestTag } from './types';
-
+import { ITag } from '@/entities/tag-link/types';
 export interface IInterviewProps {
     tags: Array<ITag>
 }
@@ -17,7 +16,7 @@ const Interview = ({ tags }: IInterviewProps) => {
 };
 
 export async function getStaticProps() {
-    const { data }: IRequestTag = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
+    const { data } = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
         .then((response) => response.json());
 
     return {

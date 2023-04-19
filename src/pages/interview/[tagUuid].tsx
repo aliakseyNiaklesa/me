@@ -1,8 +1,9 @@
 import React from 'react';
-import Questions from './components/questions';
-import Sidebar from './components/sidebar';
-import { IQuestion, IRequestTag, ITag } from './types';
 
+import { IQuestion } from '@/widgets/questions/types';
+import Sidebar from '@/widgets/sidebar';
+import Questions from '@/widgets/questions';
+import { ITag } from '@/entities/tag-link/types';
 interface Props {
     questions: Array<IQuestion>,
     tags: Array<ITag>
@@ -19,11 +20,11 @@ const InterviewWithQuestions = ({ questions, tags }: Props) => {
 }
 
 export async function getStaticPaths() {
-    const { data }: IRequestTag = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
+    const { data } = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
         .then((response) => response.json());
 
     return {
-        paths: data.Items.map((tag) => ({
+        paths: data.Items.map((tag: ITag) => ({
             params: { tagUuid: tag.id }
         })),
         fallback: false, // can also be true or 'blocking'
@@ -36,7 +37,7 @@ export async function getStaticProps({ params }: any) {
     const questionResponse = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/questions?tagUuid=' + tagUuid)
         .then((response) => response.json());
 
-    const { data }: IRequestTag = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
+    const { data } = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
         .then((response) => response.json());
     
     return {

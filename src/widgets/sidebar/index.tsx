@@ -1,5 +1,7 @@
 import React from 'react';
-import Link from 'next/link'
+
+import TagLink from '@/entities/tag-link';
+
 import { ISidebarProps } from './types';
 
 const Sidebar = ({ tags }: ISidebarProps) => {
@@ -7,11 +9,7 @@ const Sidebar = ({ tags }: ISidebarProps) => {
         <ul>
            {tags.map((tag) => (
                <li key={tag.id}>
-                    <Link
-                        href={`/interview/${tag.id}`}
-                    >
-                       {tag.title}
-                    </Link>
+                   <TagLink tag={tag}/>
                </li>
            ))}
         </ul>

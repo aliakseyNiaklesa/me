@@ -1,5 +1,5 @@
 import React from 'react';
-import { IQuestion } from '../../types';
+import { IQuestion } from './types';
 
 interface Props {
     questions: Array<IQuestion>
