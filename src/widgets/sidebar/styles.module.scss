@@ -1,0 +1,43 @@
+.sidebar {
+    width: 35rem;
+    display: grid;
+    grid-template-areas:
+        "search"
+        "filter"
+        "tags";
+
+    form {
+        padding: 0 2rem;
+    }
+    
+    .search {
+        position: relative;
+        img {
+            top: 1rem;
+            left: 1rem;
+            position: absolute;
+        }
+        
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 4rem;
+            font-weight: lighter;
+            font-family: inherit;
+            grid-area: search;
+            height: 4rem;
+            font-size: 2rem;
+            background-color: #F7F7F7;
+            border-radius: 5rem;
+            border: none;
+        }
+    }
+
+    .tags {
+        grid-area: tags;
+    }
+
+    .tag {
+
+    }
+}

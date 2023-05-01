@@ -1,9 +1,15 @@
 import React from 'react';
 
+import { Rubik } from 'next/font/google';
+
 import { IQuestion } from '@/widgets/questions/types';
 import Sidebar from '@/widgets/sidebar';
 import Questions from '@/widgets/questions';
 import { ITag } from '@/entities/tag-link/types';
+
+import './styles.scss';
+
+const fonts = Rubik({ subsets: ['latin'] });
 interface Props {
     questions: Array<IQuestion>,
     tags: Array<ITag>
@@ -12,7 +18,7 @@ interface Props {
 const InterviewWithQuestions = ({ questions, tags }: Props) => {
     console.log(questions);
     return (
-        <main>
+        <main className={fonts.className}>
             <Sidebar tags={tags} />
             <Questions questions={questions} />
         </main>
