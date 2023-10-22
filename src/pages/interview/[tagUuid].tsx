@@ -1,19 +1,25 @@
 import React from 'react';
 
+import { Rubik } from 'next/font/google';
+
 import { IQuestion } from '@/widgets/questions/types';
 import Sidebar from '@/widgets/sidebar';
 import Questions from '@/widgets/questions';
-import { ITag } from '@/entities/tag-link/types';
+
+import './styles.scss';
+import { ITag } from '@/entities';
+
+const fonts = Rubik({ subsets: ['latin'] });
 interface Props {
     questions: Array<IQuestion>,
-    tags: Array<ITag>
+    tags: Array<ITag>,
+    currentTagUuid: string,
 }
 
-const InterviewWithQuestions = ({ questions, tags }: Props) => {
-    console.log(questions);
+const InterviewWithQuestions = ({ questions, tags, currentTagUuid }: Props) => {
     return (
-        <main>
-            <Sidebar tags={tags} />
+        <main className={`${fonts.className} grid grid-cols-5 h-screen p-4`}>
+            <Sidebar tags={tags} currentTagUuid={currentTagUuid} />
             <Questions questions={questions} />
         </main>
     );
@@ -44,6 +50,7 @@ export async function getStaticProps({ params }: any) {
         props: {
             questions: questionResponse.items,
             tags: data.Items,
+            currentTagUuid: params?.tagUuid,
         }
     }
 }

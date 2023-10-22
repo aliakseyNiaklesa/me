@@ -1,5 +1,12 @@
-import { ITag } from "@/entities/tag-link/types";
+import { ITag } from "@/entities";
+
 
 export interface ISidebarProps {
-    tags: Array<ITag>
+    tags: Array<ITag>,
+    currentTagUuid: string,
+}
+
+export interface IForm {
+    complexity: number,
+    search: string,
 }

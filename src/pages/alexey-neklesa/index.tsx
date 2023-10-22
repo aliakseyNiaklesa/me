@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 import Jobs from './components/jobs';
 import Intro from './components/intro';
