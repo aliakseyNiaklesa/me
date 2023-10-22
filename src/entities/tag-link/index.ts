@@ -1,2 +1,2 @@
 export * from './model/types';
-export * from './ui/TagLink';
+export * from './ui/TagLink'
