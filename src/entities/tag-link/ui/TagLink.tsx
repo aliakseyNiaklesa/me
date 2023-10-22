@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { ITag } from './types';
+import { ITag } from '../model/types';
 
-interface Props {
+interface IProps {
     tag: ITag,
 }
 
-const TagLink = ({ tag }: Props) => {
+export const TagLink = ({ tag }: IProps) => {
     return (
         <Link
             href={`/interview/${tag.id}`}
@@ -15,5 +15,3 @@ const TagLink = ({ tag }: Props) => {
         </Link>
     )
 };
-
-export default TagLink;

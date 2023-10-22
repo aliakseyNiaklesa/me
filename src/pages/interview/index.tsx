@@ -13,8 +13,9 @@ export interface IInterviewProps {
 
 const Interview = ({ tags }: IInterviewProps) => {
     return (
-        <main className={fonts.className} >
+        <main className={`${fonts.className} grid grid-cols-5`} >
             <Sidebar tags={tags} />
+            <div>lkdsjhfalkjsfhljkasdhflkjasdhflkjah</div>
         </main>
     )
 };
