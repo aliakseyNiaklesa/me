@@ -27,12 +27,6 @@ const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
     return <aside className='col-span-1'>
         <form className="mr-4" onSubmit={handleSubmit(onSubmit)}>
             <div >
-                {/* <Image
-                    src="/icons/search.svg"
-                    width="20"
-                    height="20"
-                    alt="Search icon"
-                /> */}
                 <div className="relative">
                     <label htmlFor="Search" className="sr-only"> Search </label>
 
