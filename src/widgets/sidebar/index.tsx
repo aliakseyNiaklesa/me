@@ -5,27 +5,19 @@ import { useForm } from 'react-hook-form';
 import { TagLink } from '@/entities/tag-link';
 
 import { IForm, ISidebarProps } from './types';
-import classNames from 'classnames';
-import { ComplexityRadioButtons } from '@/features/complexity-radio-buttons';
+import { COMPLEXITY, ComplexityRadioButtons } from '@/features';
 
 const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
-    const { register, handleSubmit, watch } = useForm<IForm>({
+    const { register, watch } = useForm<IForm>({
         defaultValues: {
-            complexity: 3,
+            complexity: COMPLEXITY.SENIOR,
         }
     });
 
-
-    const onSubmit = (data: IForm) => {
-        console.log(data);
-    }
-
     const { complexity } = watch();
 
-    console.log('currentTagUuid', currentTagUuid);
-
-    return <aside className='col-span-1'>
-        <form className="mr-4" onSubmit={handleSubmit(onSubmit)}>
+    return <aside className='col-span-1 flex flex-col'>
+        <form className="mr-4">
             <div >
                 <div className="relative">
                     <label htmlFor="Search" className="sr-only"> Search </label>
@@ -63,13 +55,10 @@ const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
 
             <ComplexityRadioButtons register={register} value={complexity} />
         </form>
-        <ul>
+        <ul className="overflow-y-auto ">
             {tags.map((tag) => (
-                <li key={tag.id} className={classNames(
-                    'w-full p-4 rounded-l-lg', {
-                    'bg-slate-100': currentTagUuid === tag.id
-                })}>
-                    <TagLink tag={tag} />
+                <li key={tag.id}>
+                    <TagLink tag={tag} isActive={currentTagUuid === tag.id} />
                 </li>
             ))}
         </ul>

@@ -10,8 +10,6 @@ const Questions = ({ questions = [] }: Props) => {
     const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
     const activeQuestion = questions[activeQuestionIndex];
 
-    console.log('sdafasdf');
-
     return (
         <section className="row-span-1 col-span-4 bg-slate-100 rounded-lg p-4">
             {activeQuestion  && <ActiveQuestion question={activeQuestion} />}
