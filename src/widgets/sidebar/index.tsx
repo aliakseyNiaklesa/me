@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 
 import { TagLink } from '@/entities/tag-link';
-import ComplexityRadioButtons from '@/features/complexity-radio-buttons';
 
 import { IForm, ISidebarProps } from './types';
 import classNames from 'classnames';
+import { ComplexityRadioButtons } from '@/features/complexity-radio-buttons';
 
 const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
     const { register, handleSubmit, watch } = useForm<IForm>({
