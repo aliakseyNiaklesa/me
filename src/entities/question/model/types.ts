@@ -3,4 +3,5 @@ export interface IQuestion {
     uuid: string;
     description: string;
     title: string;
+    example?: string;
 }
