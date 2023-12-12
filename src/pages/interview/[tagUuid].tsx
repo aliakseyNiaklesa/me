@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Rubik } from 'next/font/google';
 
@@ -7,7 +7,7 @@ import Sidebar from '@/widgets/sidebar';
 import Questions from '@/widgets/questions';
 
 import './styles.scss';
-import { ITag } from '@/entities';
+import { COMPLEXITY, ITag } from '@/entities';
 
 const fonts = Rubik({ subsets: ['latin'] });
 interface Props {
@@ -17,10 +17,12 @@ interface Props {
 }
 
 const InterviewWithQuestions = ({ questions, tags, currentTagUuid }: Props) => {
+    const [complexity, setComplexity] = useState(COMPLEXITY.MIDDLE);
+
     return (
         <main className={`${fonts.className} grid grid-cols-5 grid-rows-1 h-screen p-4`}>
-            <Sidebar tags={tags} currentTagUuid={currentTagUuid} />
-            <Questions questions={questions} />
+            <Sidebar tags={tags} currentTagUuid={currentTagUuid} complexity={complexity} setComplexity={setComplexity} />
+            <Questions questions={questions} complexity={complexity} />
         </main>
     );
 }
@@ -45,7 +47,7 @@ export async function getStaticProps({ params }: any) {
 
     const { data } = await fetch('https://wr59gp8ada.execute-api.us-east-1.amazonaws.com/prod/tags')
         .then((response) => response.json());
-    
+
     return {
         props: {
             questions: questionResponse.items,

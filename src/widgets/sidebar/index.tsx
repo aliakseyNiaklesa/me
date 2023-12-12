@@ -1,32 +1,35 @@
 import React from 'react';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 
-import { TagLink } from '@/entities/tag-link';
+import { ITag, TagLink } from '@/entities/tag-link';
 
 import { IForm, ISidebarProps } from './types';
-import { COMPLEXITY, ComplexityRadioButtons } from '@/features';
+import { ComplexityRadioButtons } from '@/entities';
 
-const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
+const Sidebar = ({ tags, currentTagUuid, complexity, setComplexity }: ISidebarProps) => {
     const { register, watch } = useForm<IForm>({
         defaultValues: {
-            complexity: COMPLEXITY.SENIOR,
+            tagTitle: '',
         }
     });
 
-    const { complexity } = watch();
+    const { tagTitle } = watch();
+
+    const filteredTags = tags.filter((tag: ITag) => tag.title.toLocaleLowerCase().includes(tagTitle?.toLocaleLowerCase()));
+
+    console.log(tagTitle, filteredTags);
 
     return <aside className='col-span-1 flex flex-col'>
         <form className="mr-4">
             <div >
                 <div className="relative">
-                    <label htmlFor="Search" className="sr-only"> Search </label>
+                    <label htmlFor="Search" className="sr-only">Search</label>
 
                     <input
-                        type="text"
+                        type="tagTitle"
                         id="Search"
                         placeholder="Search for..."
-                        {...register('search')}
+                        {...register('tagTitle')}
                         className="w-full bg-slate-100 pl-3 rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
                     />
 
@@ -53,10 +56,10 @@ const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
                 </div>
             </div>
 
-            <ComplexityRadioButtons register={register} value={complexity} />
+            <ComplexityRadioButtons onChange={setComplexity} register={register} value={complexity} />
         </form>
         <ul className="overflow-y-auto ">
-            {tags.map((tag) => (
+            {filteredTags.map((tag) => (
                 <li key={tag.id}>
                     <TagLink tag={tag} isActive={currentTagUuid === tag.id} />
                 </li>

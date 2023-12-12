@@ -1,15 +1,18 @@
 import classNames from 'classnames';
-import React from 'react'
+import React, { useContext } from 'react'
 import { UseFormRegister } from 'react-hook-form';
 import { COMPLEXITY } from '../model/constants';
 
 interface IProps {
     register: UseFormRegister<any>,
     value: number;
+    onChange: (value: COMPLEXITY) => void,
 }
 
-export const ComplexityRadioButtons = ({ register, value }: IProps) => {
-    const name = 'complexity';
+export const ComplexityRadioButtons = ({ value, onChange }: IProps) => {
+    const handleOnClick = (event: any) => {
+        onChange(event?.target.value);
+    }
 
     return (
         <section className="mb-3 mt-3 flex overflow-hidden rounded-md shadow-sm" role="group">
@@ -23,7 +26,7 @@ export const ComplexityRadioButtons = ({ register, value }: IProps) => {
                     type="radio"
                     value={COMPLEXITY.JUNIOR}
                     id="junior"
-                    {...register(name)}
+                    onClick={handleOnClick}
                 />
             </label>
 
@@ -37,7 +40,7 @@ export const ComplexityRadioButtons = ({ register, value }: IProps) => {
                     type="radio"
                     value={COMPLEXITY.MIDDLE}
                     id="middle"
-                    {...register(name)}
+                    onClick={handleOnClick}
                 />
             </label>
 
@@ -51,7 +54,7 @@ export const ComplexityRadioButtons = ({ register, value }: IProps) => {
                     type="radio"
                     value={COMPLEXITY.SENIOR}
                     id="senior"
-                    {...register(name)}
+                    onClick={handleOnClick}
                 />
             </label>
         </section>
