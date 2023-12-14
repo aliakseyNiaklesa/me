@@ -14,9 +14,9 @@ const Questions = ({ questions = [], complexity }: Props) => {
     const sortedQuestions = questions.filter(question => question.level == complexity);
 
     return (
-        <section className="row-span-1 col-span-4 bg-slate-100 rounded-lg p-4">
+        <section className="row-span-1 col-span-4 bg-slate-100 rounded-lg p-4 overflow-scroll">
             {activeQuestion && <ActiveQuestion question={activeQuestion} />}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 overflow-scroll">
                 {sortedQuestions.map((question, index) => (
                     <QuestionCard isActive={index === activeQuestionIndex} key={question.uuid} question={question} onClick={() => setActiveQuestionIndex(index)} />
                 ))}
