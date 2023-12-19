@@ -29,7 +29,7 @@ export const ActiveQuestion = ({ question }: IProps) => {
             </header>
             <span className="font-sans "><pre>{description}</pre></span>
             {examples?.map((text, index) => (
-                <div className="collapse bg-violet-700 mb-3 mt-3">
+                <div key={text + index} className="collapse bg-violet-700 mb-3 mt-3">
                     <input type="checkbox" />
                     <div className="collapse-title text-xl font-medium">
                         Example {++index}
@@ -53,12 +53,12 @@ export const ActiveQuestion = ({ question }: IProps) => {
             />
             <footer className='flex justify-end p-1'>
                 {links?.article?.map((link) => (
-                    <a href={link} target="_blank">
+                    <a key={link} href={link} target="_blank">
                         <UilFileInfoAlt className="fill-cyan-500" />
                     </a>
                 ))}
                 {links?.youtube?.map((link) => (
-                    <a href={link} target="_blank">
+                    <a key={link} href={link} target="_blank">
                         <UilYoutube className="fill-rose-500" />
                     </a>
                 ))}
