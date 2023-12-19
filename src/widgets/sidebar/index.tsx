@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form';
 import { ITag, TagLink } from '@/entities/tag-link';
 
 import { IForm, ISidebarProps } from './types';
-import { ComplexityRadioButtons } from '@/entities';
+// import { ComplexityRadioButtons } from '@/entities';
 
-const Sidebar = ({ tags, currentTagUuid, complexity, setComplexity }: ISidebarProps) => {
+const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
     const { register, watch } = useForm<IForm>({
         defaultValues: {
             tagTitle: '',
@@ -16,8 +16,6 @@ const Sidebar = ({ tags, currentTagUuid, complexity, setComplexity }: ISidebarPr
     const { tagTitle } = watch();
 
     const filteredTags = tags.filter((tag: ITag) => tag.title.toLocaleLowerCase().includes(tagTitle?.toLocaleLowerCase()));
-
-    console.log(tagTitle, filteredTags);
 
     return <aside className='col-span-1 flex flex-col'>
         <form className="mr-4">
