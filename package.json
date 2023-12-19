@@ -1,6 +1,6 @@
 {
   "name": "cv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "daisyui": "^4.4.19",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5"
   }

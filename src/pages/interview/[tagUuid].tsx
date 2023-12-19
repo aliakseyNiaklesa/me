@@ -22,7 +22,7 @@ const InterviewWithQuestions = ({ questions, tags, currentTagUuid }: Props) => {
     return (
         <main className={`${fonts.className} grid grid-cols-5 grid-rows-1 h-screen p-4`}>
             <Sidebar tags={tags} currentTagUuid={currentTagUuid} />
-            {/* <Questions questions={questions} complexity={complexity} /> */}
+            <Questions questions={questions} complexity={complexity} />
         </main>
     );
 }
