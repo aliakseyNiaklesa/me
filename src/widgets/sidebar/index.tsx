@@ -6,7 +6,7 @@ import { ITag, TagLink } from '@/entities/tag-link';
 import { IForm, ISidebarProps } from './types';
 // import { ComplexityRadioButtons } from '@/entities';
 
-const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
+const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
     const { register, watch } = useForm<IForm>({
         defaultValues: {
             tagTitle: '',
@@ -58,7 +58,7 @@ const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
         </form>
         <ul className="overflow-y-auto mt-3">
             {filteredTags.map((tag) => (
-                <li key={tag.id}>
+                <li key={tag.id} className='flex'>
                     <TagLink tag={tag} isActive={currentTagUuid === tag.id} />
                 </li>
             ))}
