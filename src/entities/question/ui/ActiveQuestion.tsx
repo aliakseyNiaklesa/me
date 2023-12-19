@@ -1,4 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { IQuestion } from '../model/types';
 
 interface IProps {
@@ -28,7 +31,7 @@ export const ActiveQuestion = ({ question }: IProps) => {
             </header>
             <span className="font-sans "><pre>{description}</pre></span>
             {examples?.map((text, index) => (
-                <div key={text + index} className="collapse bg-violet-700 mb-3 mt-3">
+                <div className="collapse bg-violet-700 mb-3 mt-3">
                     <input type="checkbox" />
                     <div className="collapse-title text-xl font-medium">
                         Example {++index}
@@ -52,13 +55,13 @@ export const ActiveQuestion = ({ question }: IProps) => {
             />
             <footer className='flex justify-end p-1'>
                 {links?.article?.map((link) => (
-                    <a key={link} href={link} target="_blank">
-                        f
+                    <a href={link} target="_blank">
+                        <FontAwesomeIcon icon={faFile} />
                     </a>
                 ))}
                 {links?.youtube?.map((link) => (
-                    <a key={link} href={link} target="_blank">
-                        d
+                    <a href={link} target="_blank">
+                        <FontAwesomeIcon icon={faYoutube} />
                     </a>
                 ))}
             </footer>
