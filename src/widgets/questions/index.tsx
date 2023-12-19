@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { IQuestion } from './types';
 import { ActiveQuestion, QuestionCard } from '@/entities/question';
 import { COMPLEXITY } from '@/entities';
+import { IntervieweePanel } from '@/features';
 
 interface Props {
     questions: Array<IQuestion>,
@@ -15,6 +16,7 @@ const Questions = ({ questions = [], complexity }: Props) => {
 
     return (
         <section className="row-span-1 col-span-4 bg-slate-100 rounded-lg p-4 overflow-scroll">
+            <IntervieweePanel />
             {activeQuestion && <ActiveQuestion question={activeQuestion} />}
             <div className="flex flex-wrap gap-3 overflow-scroll">
                 {sortedQuestions.map((question, index) => (

@@ -9,8 +9,6 @@ interface IProps {
 export const ActiveQuestion = ({ question }: IProps) => {
     const { title, description, examples, links } = question;
 
-    console.log(question);
-
     const [feedback, setFeedback] = useState<string>('');
 
     useEffect(() => {

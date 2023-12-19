@@ -21,7 +21,7 @@ const Sidebar = ({ tags, currentTagUuid, complexity, setComplexity }: ISidebarPr
 
     return <aside className='col-span-1 flex flex-col'>
         <form className="mr-4">
-            <div >
+            <div>
                 <div className="relative">
                     <label htmlFor="Search" className="sr-only">Search</label>
 
@@ -56,9 +56,9 @@ const Sidebar = ({ tags, currentTagUuid, complexity, setComplexity }: ISidebarPr
                 </div>
             </div>
 
-            <ComplexityRadioButtons onChange={setComplexity} register={register} value={complexity} />
+            {/* <ComplexityRadioButtons onChange={setComplexity} register={register} value={complexity} /> */}
         </form>
-        <ul className="overflow-y-auto ">
+        <ul className="overflow-y-auto mt-3">
             {filteredTags.map((tag) => (
                 <li key={tag.id}>
                     <TagLink tag={tag} isActive={currentTagUuid === tag.id} />
