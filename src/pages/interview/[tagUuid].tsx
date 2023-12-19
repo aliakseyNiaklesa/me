@@ -17,11 +17,11 @@ interface Props {
 }
 
 const InterviewWithQuestions = ({ questions, tags, currentTagUuid }: Props) => {
-    const [complexity] = useState(COMPLEXITY.SENIOR);
+    const [complexity, setComplexity] = useState(COMPLEXITY.SENIOR);
 
     return (
         <main className={`${fonts.className} grid grid-cols-5 grid-rows-1 h-screen p-4`}>
-            <Sidebar tags={tags} currentTagUuid={currentTagUuid} />
+            <Sidebar tags={tags} currentTagUuid={currentTagUuid} complexity={complexity} setComplexity={setComplexity} />
             <Questions questions={questions} complexity={complexity} />
         </main>
     );
