@@ -6,7 +6,7 @@ import { ITag, TagLink } from '@/entities/tag-link';
 import { IForm, ISidebarProps } from './types';
 // import { ComplexityRadioButtons } from '@/entities';
 
-const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
+const Sidebar = ({ tags, currentTagUuid }: ISidebarProps) => {
     const { register, watch } = useForm<IForm>({
         defaultValues: {
             tagTitle: '',
@@ -39,13 +39,13 @@ const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke-width="1.5"
+                                strokeWidth="1.5"
                                 stroke="currentColor"
                                 className="h-4 w-4"
                             >
                                 <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                                 />
                             </svg>
@@ -58,7 +58,7 @@ const Sidebar = ({ tags, currentTagUuid, }: ISidebarProps) => {
         </form>
         <ul className="overflow-y-auto mt-3">
             {filteredTags.map((tag) => (
-                <li key={tag.id}>
+                <li key={tag.id} className='flex'>
                     <TagLink tag={tag} isActive={currentTagUuid === tag.id} />
                 </li>
             ))}

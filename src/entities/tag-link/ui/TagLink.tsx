@@ -12,12 +12,13 @@ export const TagLink = ({ tag, isActive }: IProps) => {
     return (
         <Link
             className={classNames(
-                'w-full block p-4 rounded-l-lg hover:bg-slate-100 mb-1', {
+                'w-full flex justify-between block p-4 rounded-l-lg hover:bg-slate-100 mb-1', {
                 'bg-slate-100': isActive,
             })}
             href={`/interview/${tag.id}`}
         >
-            {tag.title}
+            <span>{tag.title}</span>
+            <span>({tag.questions})</span>
         </Link>
     )
 };

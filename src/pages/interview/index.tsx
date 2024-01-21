@@ -15,7 +15,7 @@ const Interview = ({ tags }: IInterviewProps) => {
     return (
         <main className={`${fonts.className} grid grid-cols-5`} >
             <Sidebar currentTagUuid="" tags={tags} />
-            <div>lkdsjhfalkjsfhljkasdhflkjasdhflkjah</div>
+            <div></div>
         </main>
     )
 };
