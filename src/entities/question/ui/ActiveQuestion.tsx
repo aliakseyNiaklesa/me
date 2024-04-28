@@ -46,7 +46,7 @@ export const ActiveQuestion = ({ question }: IProps) => {
                 </div>
             ))}
             <textarea
-                className="block mt-3 px-2 resize-none text-black w-full rounded-lg"
+                className="block mt-3 px-2 resize-none w-full rounded-lg"
                 name="postContent"
                 value={feedback}
                 onChange={onChange}
